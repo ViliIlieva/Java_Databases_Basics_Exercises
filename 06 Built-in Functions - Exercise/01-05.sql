@@ -19,7 +19,7 @@ SELECT first_name, `last_name` from employees
 WHERE `job_title` NOT LIKE '%engineer%'
 ORDER BY employee_id;
 
-5.	Find Towns with Name Length
+5.Find Towns with Name Length
 SELECT `name` from towns
 WHERE char_length(`name`) = 5 OR char_length(`name`) = 6
 ORDER BY `name`;
