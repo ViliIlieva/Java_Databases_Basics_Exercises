@@ -6,3 +6,7 @@ WHERE right(peak_name, 1) = Left(river_name, 1)
 ORDER BY mix;
 
 12.Games from 2011 and 2012 Year
+SELECT `name`, date_format(`start`, '%Y-%m-%d') as `start`   FROM games 
+WHERE year(start) >= 2011 AND year(start) <= 2012  
+ORDER BY `start`, `name`
+LIMIT 50;
