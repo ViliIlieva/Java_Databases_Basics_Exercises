@@ -10,3 +10,7 @@ SELECT `name`, date_format(`start`, '%Y-%m-%d') as `start`   FROM games
 WHERE year(start) >= 2011 AND year(start) <= 2012  
 ORDER BY `start`, `name`
 LIMIT 50;
+
+13.	User Email Providers
+SELECT `user_name`, substring(email, locate('@', email) +1) as 'Email Provider' FROM users 
+ORDER BY `Email Provider`, `user_name`;
