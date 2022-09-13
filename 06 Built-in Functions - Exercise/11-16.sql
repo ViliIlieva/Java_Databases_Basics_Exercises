@@ -11,6 +11,11 @@ WHERE year(start) >= 2011 AND year(start) <= 2012
 ORDER BY `start`, `name`
 LIMIT 50;
 
-13.	User Email Providers
+13.User Email Providers
 SELECT `user_name`, substring(email, locate('@', email) +1) as 'Email Provider' FROM users 
 ORDER BY `Email Provider`, `user_name`;
+
+14.Get Users with IP Address Like Pattern
+SELECT `user_name`, ip_address FROM users 
+WHERE ip_address LIKE '___.1%.%.___'
+ORDER BY `user_name`;
