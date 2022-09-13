@@ -19,3 +19,20 @@ ORDER BY `Email Provider`, `user_name`;
 SELECT `user_name`, ip_address FROM users 
 WHERE ip_address LIKE '___.1%.%.___'
 ORDER BY `user_name`;
+
+15.	Show All Games with Duration and Part of the Day
+SELECT `name` as 'game',
+case
+WHEN hour(`start`) < 12 THEN 'Morning'
+WHEN hour(`start`) < 18 THEN 'Afternoon'
+ELSE 'Evening'
+end as 'Part of the Day',
+case
+WHEN `duration` <= 3 THEN 'Extra Short'
+WHEN `duration` <= 6 THEN 'Short'
+WHEN `duration` <= 10 THEN 'Long'
+ELSE 'Extra Long'
+END as 'Duration'
+FROM games;
+
+16.	 Orders Table
