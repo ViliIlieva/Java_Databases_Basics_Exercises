@@ -7,6 +7,10 @@ SELECT max(magic_wand_size) as 'longest_magic_wand'
 FROM `wizzard_deposits`;
 
 3.Longest Magic Wand Per Deposit Groups
+SELECT deposit_group,  max(magic_wand_size) as 'longest_magic_wand'
+FROM `wizzard_deposits`
+GROUP BY deposit_group
+ORDER BY `longest_magic_wand` ASC, deposit_group;
 
 4.Smallest Deposit Group Per Magic Wand Size*
 
