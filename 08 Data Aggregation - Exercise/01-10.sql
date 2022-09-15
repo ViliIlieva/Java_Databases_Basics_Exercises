@@ -62,3 +62,7 @@ GROUP BY `age_group`
 ORDER BY `age_group`;
 
 10.First Letter
+SELECT DISTINCT left(first_name, 1) as 'first_lettere' 
+FROM `wizzard_deposits`
+WHERE deposit_group = 'Troll Chest'
+ORDER BY `first_lettere`;
