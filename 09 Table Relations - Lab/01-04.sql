@@ -18,3 +18,12 @@ select campers.id,vehicles.vehicle_type, concat_ws(' ',campers.first_name, campe
 from campers 
 join vehicles  on
 vehicles.driver_id = campers.id;
+
+3. SoftUni Hiking
+select routes.starting_point as 'route_starting_point',
+routes.end_point as 'route_ending_point',
+routes.leader_id,
+concat_ws(' ',campers.first_name, campers.last_name) as leader_name 
+from campers 
+join routes  on
+routes.leader_id = campers.id;
