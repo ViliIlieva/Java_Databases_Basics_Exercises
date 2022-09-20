@@ -27,3 +27,20 @@ concat_ws(' ',campers.first_name, campers.last_name) as leader_name
 from campers 
 join routes  on
 routes.leader_id = campers.id;
+
+
+4. Delete Mountains
+CREATE TABLE mountains (
+id INT PRIMARY KEY AUTO_INCREMENT,
+`name` VARCHAR(50)
+);
+
+CREATE TABLE peaks (
+id INT PRIMARY KEY AUTO_INCREMENT,
+`name` VARCHAR(50),
+`mountain_id` INT,
+CONSTRAINT fk_peaks_mountains
+FOREIGN KEY (mountain_id)
+REFERENCES mountains(id)
+on DELETE CASCADE
+);
