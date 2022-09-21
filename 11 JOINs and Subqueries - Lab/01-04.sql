@@ -8,3 +8,8 @@ ORDER BY employee_id
 LIMIT 5;
 
 -- 2. Towns and Addresses
+
+-- 4. High Salary
+SELECT count(*)
+FROM employees
+where salary > (SELECT avg(salary) from employees);
