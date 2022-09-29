@@ -16,3 +16,16 @@ END
 
 
 -- 2. Employees Promotion
+delimiter ***
+CREATE PROCEDURE usp_raise_salaries(department_name VARCHAR(50))
+BEGIN
+UPDATE employees as e
+RIGHT JOIN departments as d on e.department_id = d.department_id
+set salary = salary * 1.05
+WHERE d.name = department_name;
+end
+***
+---------------------------------------------------------------------------------------------------------
+
+
+-- 3. Employees Promotion By ID
