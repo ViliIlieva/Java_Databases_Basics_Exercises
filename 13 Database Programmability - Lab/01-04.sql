@@ -29,3 +29,16 @@ end
 
 
 -- 3. Employees Promotion By ID
+delimiter ***
+CREATE PROCEDURE usp_raise_salary_by_id(id INT)
+BEGIN
+	IF((SELECT count(*) FROM employees WHERE employee_id = id)> 0)
+    THEN
+		UPDATE employees SET salary = salary*1.05 WHERE employee_id = id;
+    END IF;
+end
+***
+---------------------------------------------------------------------------------------------------------
+
+
+-- 4. Triggered
