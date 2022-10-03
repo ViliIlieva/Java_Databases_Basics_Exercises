@@ -42,3 +42,19 @@ WHERE t.name = town_name
 ORDER BY e.first_name, e.last_name, e.employee_id ASC;
 END
 ***
+----------------------------------------------------------------------------------------
+
+-- 05. Salary Level Function
+delimiter ***
+CREATE FUNCTION ufn_get_salary_level (salary_of_employee DECIMAL(19, 4))
+RETURNS VARCHAR(8)
+DETERMINISTIC 
+	BEGIN
+    DECLARE salary_level VARCHAR(8);
+    if salary_of_employee < 30000 THEN set salary_level:= 'Low';
+    ELSEIF salary_of_employee <= 50000 THEN SET salary_level:= 'Average';
+    ELSE SET salary_level:= 'High';
+    END IF;
+    RETURN salary_level;
+END;
+***
